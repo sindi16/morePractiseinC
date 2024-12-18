@@ -12,7 +12,7 @@ int main()
         if (num >= 0)
         {
             sum += i;
-            printf("The sum of numbers is %d\n", sum);
+            printf("The sum of numbers from 1 to %d is %d\n", num, sum);
         }
 
     }
