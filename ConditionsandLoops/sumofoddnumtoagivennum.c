@@ -3,15 +3,19 @@
 int main()
 {
     int i, num, sum;
+    sum = 0;
     printf("Please enter your number: \n");
     scanf("%d", &num);
+
     for (i = 1; i <= num; i++)
     {
-        if (num >= 0 && num % 2 != 0)
+        if (num >= 0)
         {
-            sum += num;
-            printf("%d", sum);
-            
+            if (i % 2 != 0)
+            {
+                sum += i;
+                printf("%d\n", sum);
+            }
         }
     }
     return (0);
