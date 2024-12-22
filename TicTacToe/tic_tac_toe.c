@@ -40,7 +40,60 @@ int isValidMove(char board[3][3], int row, int col)
         return (0);
 }
 int checkWin(char board[3][3], char player)
-{
+{   
+    int i;
     //Check rows, diagonals and columns.
-    for (i = 0; i )
+    for (i = 0; i < 3; i++)
+    {
+        if (board[i][0] == player && board[i][1] == player && board[i][2] == player)
+        {
+            return (1);
+        }
+        if (board[0][i] == player && board[1][i] == player && board[2][i] == player)
+        {
+            return (1);
+        }
+    }   
+    if (board[0][0] == player && board[1][1] == player && board[2][2] == player)
+    {
+        return (1);
+    }
+    if (board[0][2] == player && board[1][1] == player && board[2][0] == player)
+    {
+        return (1);
+    }
+    return 0;
+}
+
+//Function to check if the board is full (no empty spaces)
+int isBoardFull(char board[3][3])
+{   
+    int i, j;
+    for (i = 0; i < 3; i++)
+    {
+        for (j = 0; j < 3; j++)
+        {
+            if (board[i][j] == ' ')
+            {
+                return (0);
+            }
+        
+        }
+    }
+    return (1);
+}
+
+//Function to play a single turn
+void playTurn(char board [3][3], char player)
+{
+    int row, col;
+    printf("Player %c, enter your move (row and column: 0-2): ", player);
+    scanf("%d %d", &row, &col);
+
+    while (!isValidMove(board, row, col))
+    {
+        printf("Invalid move. Try again (row and column: 0-2): ");
+        scanf("%d %d", &row, &col);
+    }
+    board[row][col] = player;
 }
