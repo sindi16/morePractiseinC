@@ -9,7 +9,7 @@ void toUppercase(char *str)
         {
             str[i] = str[i] - 32;
         }
-        str++;
+        str++; // str[i]++ increments the next valuee char in the str and str++ this increment operator to one char to other
    }
    
 }
