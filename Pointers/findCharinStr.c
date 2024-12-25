@@ -3,12 +3,12 @@
 int findCharacter(char *str, char letter)
 {
     int i;
-    letter = c;
+
     for (i = 0; str[i] != '\0'; i++)
     {
-        if (str[i] == 'c')
+        if (str[i] == 'letter')
         {
-            return(letter[i]);
+            return (i);
         }
     return (-1);
     }
